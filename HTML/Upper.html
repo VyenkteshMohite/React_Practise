@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+            function f1(){
+
+                let ele=document.getElementById("i1");
+                let s=ele.value;
+                //console.log(s.toUpperCase());
+                let ustr= s.toUpperCase()
+
+                document.getElementById("p1").innerHTML= "<b>"+ustr+"<b>";
+
+            }
+
+    </script>
+
+
+</head>
+<body>
+
+    Enter String : <input id="i1" type="text"/> <br></br>
+    <input type="button" value="Convert_to_UpperCase"  onclick="f1()"/>
+    <p id="p1"></p>
+
+</body>
+</html>

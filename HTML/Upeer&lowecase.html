@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function f1(){
+
+            let data = document.getElementById("i1").value
+            let uc = document.getElementById("r1").checked
+            let lc = document.getElementById("r2").checked
+            let tc = document.getElementById("r3").checked
+
+            let outstr=data
+            if(uc){
+                outstr = data.toUpperCase()
+            }
+            if(lc){
+                outstr = data.toLowerCase()
+            }
+            if(tc){
+                let val1 = data.charAt(0).toUpperCase();
+                let val2=data.substring(1).toLowerCase();
+
+                outstr = val1 + val2
+            }
+        document.getElementById("sp1").innerHTML=outstr
+        }      
+    </script>
+</head>
+<body>
+<pre>
+<label>
+    Enter the String : <input type="text"  id="i1" onblur="f1()"/>
+</label>
+<label>UpperCase: <input type="radio" id="r1" name="format" onclick="f1()"  /></label>
+<label>LowerCase: <input  type="radio" id="r2" name="format" onclick="f1()" /></label>
+<label>TitleCase: <input  type="radio" id="r3" name="format" onclick="f1()" /></label>
+
+<p> Result => <span id="sp1"></span></p>
+
+</pre>   
+</body>
+</html>

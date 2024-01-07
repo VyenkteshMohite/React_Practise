@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function calculate(){
+            console.log("Here")
+            let val1= parseInt(document.getElementById("n1").value);  
+            let val2= parseInt(document.getElementById("n2").value);
+            let op= document.getElementById("operation").value;
+
+            let result
+
+            switch(op)
+            {
+                case '+' : result = val1 + val2; break;
+                case '-' : result = val1 - val2; break;
+                case '*' : result = val1 * val2; break;               
+                case '/' : result = val1 / val2; break;
+            }
+
+            var out = val1+" "+op+" "+val2+"="+result 
+
+           
+
+            document.getElementById("sp1").innerHTML=out;
+
+        }
+    </script>
+    
+</head>
+<body>
+    <pre>
+        Enter first Number:<input id="n1" type="number" value="0"></input>
+        Enter Second Number:<input id="n2" type="number" value="0"></input>
+        Select Operation:<select id="operation" onchange="calculate()">
+                            <option>select op</option>
+                            <option>+</option>
+                            <option>-</option>
+                            <option>*</option>
+                            <option>/</option>
+                         </select>  
+                         <p>The Result is:<span id="sp1"></span></p>
+    </pre>
+    
+</body>
+</html>
