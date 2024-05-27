@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+
+    function convert(){
+        let amt=document.getElementById("amt").value
+        let curfrom = document.getElementById("from").value
+        let curto = document.getElementById("to").value
+        let result
+
+        let rates
+
+        rates={'$':{'₹':84,'€': 0.93,'¥': 144.86 },
+                'euro':{'₹':84,'$':0.90,'¥': 144.86 },
+                'pound':{'₹':84,'€': 0.93,'$':1.96},
+                '₹':{'$':0.01,'€': 0.93,'¥': 144.86 }
+            }
+
+        result = amt * rates[curfrom][curto];
+        if(curfrom == curto){
+            result=amt
+        }
+        document.getElementById("result").innerHTML = result + ' ' + curto
+    }
+
+   </script>
+</head>
+<body>
+<center>
+
+    <b>Currency Converter</b>
+    <div>
+        Enter the Number: <input id="amt" type="number" /> <br><br>
+        From : <select id="from">
+                 <option>₹</option>
+                <option>$</option>
+                <option>&euro;</option>
+                <option>&yen;</option>
+            </select>
+            <br><br>
+        To: <select id="to">
+                 <option>$</option>
+                 <option>&euro;</option>
+                 <option>&yen;</option>
+                <option>₹</option>
+            </select> <br><br>
+            <input type="submit"  onclick="convert()">
+
+            <p id="result"></p>
+    </div>
+</center>    
+</body>
+</html>
